@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        {% block header %}
+        <h1>{{title}}</h1>
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+        {% endblock %}
+    </header>
+
+    <hr>
+
+    {% block navigation %}
+    <ul>
+        <li><a href="\#/">Стартовая страница</a></li>
+        <li><a href="\platform/">Главная</a></li>
+        <li><a href="\platform/games/">Магазин</a></li>
+        <li><a href="\platform/cart/">Корзина</a></li>
+    </ul>
+    {% endblock %}
+
+    <hr>
+
+    <main>
+        {% block content %}
+        <p>Posts</p>
+        {% endblock %}
+    </main>
+
+    <hr>
+
+    <footer>
+        {% block footer %}
+        &copy; UrbanDjango
+        {% endblock %}
+    </footer>
+</body>
+
+</html>

@@ -17,8 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
+from task1.views import ClassHome, ClassShop, ClassBasket, sign_up_by_django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('platform/', ClassHome.as_view()),
+    path('platform/games/', ClassShop.as_view()),
+    path('platform/cart/', ClassBasket.as_view()),
+ #   path('html_sign_up/', sign_up_by_html),
+    path('django_sign_up/', sign_up_by_django),
     path("", TemplateView.as_view(template_name="index.html")),
 ]

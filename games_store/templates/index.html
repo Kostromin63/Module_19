@@ -1,10 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Игры</title>
+    <title>{% block title %}START{% endblock %}</title>
+    <title>index</title>
+    <link rel="stylesheet" href='{% static "style.css" %}' type="text/css">
 </head>
+
+<hr>
+
 <body>
-    <h1>Добро пожаловать в наш магазин игр!</h1>
+    <h1> Добро пожаловать на </h1>
+    <h1> cтартовую страницу проекта UrbanDjango</h1>
+
+    <hr>
+    <ul>
+        <li><a href="platform/">На главную страницу игр</a></li>
+        <li><a href="django_sign_up/">Регистрация</a></li>
+    </ul>
+    <hr>
+
+    <div class="container">
+        <img src='{% static "img/dgango_st.png" %}' alt="Привет джанго" height="300px" width="700px" />
+    </div>
+
 </body>
+
+<hr>
+
+<footer>
+    {% block footer %}
+    &copy; UrbanDjango
+    {% endblock %}
+</footer>
+
 </html>

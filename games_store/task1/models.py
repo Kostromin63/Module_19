@@ -6,7 +6,7 @@ class Buyer(models.Model):
     balance = models.DecimalField(decimal_places=2, max_digits=9)
     age = models.IntegerField()
 
-    def __str__(self):
+    def get_name(self):
         return self.name
 
 

@@ -1,0 +1,22 @@
+{% extends "task1/menu.html" %}
+
+{% block title %}
+{{ block.super }}
+{% endblock %}
+
+{% block navigation %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<legend>Товары:</legend>
+<ul>
+    {% for product in products %}
+    <li>{{ product.title }} | {{ product.description }}. Стоимость: {{ product.cost }} <button type="submit" value="product">Купить</button></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% endblock %}
