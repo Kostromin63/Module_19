@@ -14,19 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+
 from django.urls import path
-from django.urls import include
-from django.views.generic import TemplateView
-from task1.views import ClassHome, ClassShop, ClassBasket, sign_up_by_django
+from .views import index1, index2, ClassHome
+
+app_name = "testapp"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('platform/', ClassHome.as_view()),
-    path('platform/games/', ClassShop.as_view()),
-    path('platform/cart/', ClassBasket.as_view()),
- #   path('html_sign_up/', sign_up_by_html),
-    path('django_sign_up/', sign_up_by_django),
-    path('blogs/', include("testapp.urls")),
-    path("", TemplateView.as_view(template_name="index.html")),
+    path("", ClassHome.as_view()),
+    path("point_one_rear_pagination/", index1),
+    path("point_two_rear_pagination/", index2),
 ]

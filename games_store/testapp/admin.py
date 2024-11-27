@@ -12,4 +12,4 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = "topic", "title", "created_at", "is_published",
     list_filter = "topic", "is_published",
     search_fields = "title", "content",
-    list_per_page = 10
+    list_per_page = 5

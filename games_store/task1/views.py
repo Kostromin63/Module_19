@@ -8,7 +8,6 @@ from task1.models import Buyer, Game
 
 # users = ['Anton', 'Andre', 'Simon', 'Marya', 'Tereza', 'Fransua', 'Izabel', 'Ilia']
 def sign_up_by_django(request):
-    print(request.method)
     info = {}
     if request.method == 'POST':
         form = UsrRegister(request.POST)

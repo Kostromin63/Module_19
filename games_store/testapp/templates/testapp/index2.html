@@ -1,0 +1,35 @@
+{% extends "testapp/menu.html" %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block navigation %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="row">
+    {% for post in page_obj %}
+        <div class="col-md-4">
+            <h2>{{ post.title }}</h2>
+            <p>Тема сообщения: {{ post.topic }}</p>
+            <p>{{ post.content }}</p>
+            <p>{{ post.created_at }}</p>
+        </div>
+    {% endfor %}
+    </div>
+
+    <hr>
+
+    {% if page_obj.has_other_pages %}
+        {% include 'pagination.html' %}
+    {% endif %}
+
+</body>
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% endblock %}
